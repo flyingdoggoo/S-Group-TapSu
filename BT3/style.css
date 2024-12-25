@@ -1,0 +1,73 @@
+body{
+    /* width: 90%; */
+    margin: 0 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(46, 44, 107);
+}
+#header{
+    font-size: 50px;
+    margin: 40px 0;
+    text-align: center;
+}
+#container1{
+    text-align: center;
+    margin: 40px 0;
+}
+input {
+    padding: 25px;
+    width: 40%;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    margin-top: 40px;
+    font-size: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+#container2{
+    display: flex;
+    justify-content: center;
+}
+#container2 div {
+    background-color: white;
+    padding: 10px;
+    margin: 9px;
+    /* width: calc(80% / 6); */
+    height: 350px;
+    width: 200px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+#container2 .card img{
+    /* margin-right: 30px; */
+    width: 100%;
+    margin-top: 20px;
+    /* padding: 30px 30px; */
+    /* margin: 30px 30px auto; */
+}
+#container2 div p{
+    display: inline-block;
+    border-radius: 10px;
+    padding: 8px 7px;
+    font-size: 15px;
+    margin: 0;
+}
+#container2 div h3{
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+.Grass{
+    background-color: rgb(33, 218, 33);
+}
+.Poison{
+    background-color: rgb(168, 10, 168);
+}
+.Fire{
+    background-color: rgb(246, 66, 66);
+}
+.Flying{
+    background-color: rgba(146, 13, 169, 0.679);
+}

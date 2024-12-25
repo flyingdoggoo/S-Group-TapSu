@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(13, 72, 111);
+        }
+        .container{
+            margin-top: 50px;
+            width: 480px;
+            height: 360px;
+            background-image: url('https://tympanus.net/Development/HoverEffectIdeas/img/14.jpg');
+            text-align: center;
+            position: relative;         
+        }
+        .text1{
+            font-size: 30px;
+            font-weight: 100;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            position: absolute;
+            color: darkblue;
+            left: 50%;
+            top: 45%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease-in-out;
+        }
+        .text2{
+            font-family: 'Courier New', Courier, monospace;
+            width: 80%;
+            font-size: 18px;
+            font-weight: 400;
+            position: absolute;
+            left: 50%;
+            top: 90%;
+            opacity: 0;
+            transform: translateX(-50%);
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .gradient{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(97, 96, 134, 0.5), rgba(10, 41, 215, 0.5));
+            opacity: 0;
+        }
+        .container:hover .gradient{
+            background: linear-gradient(rgba(99, 98, 137, 0.5), rgba(40, 60, 172, 0.5));
+            opacity: 1;
+        }
+        .container:hover .text2{
+            opacity: 100;
+            top: 80%;
+        }
+        .container:hover .text1{
+            color: white;
+            top: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gradient"></div>
+        <div class="text1">HOLY<span style="font-weight: bold;">SADIE</span></div>
+        <div class="text2">SADIE NEVER TOOK HER EYES OFF ME. <br>SHE HAD A DARK SOUL.</div>
+    </div>
+</body>
+</html>

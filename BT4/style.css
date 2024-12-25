@@ -1,0 +1,85 @@
+*{
+    font-family: monospace;
+    
+    font-size: 16px;    
+}
+body{
+    width: 800px;
+    height: 1800px;
+    margin: 20px auto;
+    font-size: 20px;
+
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+.body1{
+    display: flex;
+}
+.text1-1{
+    margin-left: 50px;
+}
+.text1-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.body2{
+    margin-top: 30px;
+}
+.body2 button{
+    padding: 10px 25px;
+    margin: 40px auto;
+    border: solid 2px #df6202;
+    background-color: #fff;
+    border-radius: 30px;
+    color: #df6202;
+    font-size: 16px;
+}
+.body3{
+    display: flex;
+}
+.body3-1{
+    width: 50%;
+}
+.body3-2{
+    width: 50%;
+}
+.body3 .body3-1 .skill-list-1 p{
+    display: inline-block;
+    margin-right: 2px;
+    margin-left: 0px;
+    border: grey solid 1px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+.body3 .body3-2 .skill-list-2 p{
+    display: inline-block;
+    margin-right: 2px;
+    margin-left: 0px;
+    border: grey solid 1px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+.body4{
+    display: flex;
+    margin-top: 25px;
+}
+.body4 .body4-1{
+    width: 50%;
+}
+.body4 .body4-2{
+    margin-left: 30px;
+    width: 50%;
+}
+li::marker {
+    font-size: 16px; 
+    font-weight: bold; 
+    color: black; 
+}
