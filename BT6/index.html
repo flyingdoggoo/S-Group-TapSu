@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input, button, select{
+            display: block;
+            width: 300px;
+            height: 30px;
+            font-size: 20px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"]{
+            width: 20px;
+            height: 20px;
+        }
+        .group{
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .item{
+            display: flex;    
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="group">
+                <label for="name">Name</label>
+                <input id= "name" type="text" class="text" placeholder="Enter your name">
+            </div>
+            <div class="group">
+                <label for="email">Email</label>
+                <input id= "email" type="email" class="text" placeholder="Enter your email">
+            </div>
+            <div class="group">
+                <label for="password">Password</label>
+                <input id= "password" type="password" class="text" placeholder="Enter your password">
+            </div>
+            <div class="group">
+                <label for="password">Confirm Password</label>
+                <input id= "password" type="password" class="text" placeholder="Enter your password">
+            </div>
+            <div class="group">
+                <div class="item">
+                    <label for="sex">Nam</label>
+                    <input id="sex" type="radio" name="gender" value="male"> 
+                </div>
+                <div class="item">
+                    <label for="sex">Nữ</label>
+                    <input id="sex" type="radio" name="gender" value="female">
+                </div>
+            </div>
+            <div class="group">
+                <label for="username">Language</label>
+                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="">
+            </div>
+            <div class="group">
+                <label for="city">Tỉnh / Thành Phố</label>
+                <select name="" id="">
+                    <option value="Đà Nẵng">Đà Nẵng</option>
+                    <option value="TP Hồ Chí Minh">TPHCM</option>
+                </select>
+            </div>
+            <div class="group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+    
+    </body>
+</html>

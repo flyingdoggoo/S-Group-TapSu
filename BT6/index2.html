@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: beige;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            background: linear-gradient(90deg, #000, #7a0b0b);
+            width: 100%;
+            height: 80px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .ui {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .ui li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px;
+            height: 40px;
+        }
+
+        .group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .group button {
+            padding: 10px;
+            border: none;
+        }
+
+        .group .signin {
+            background-color: black;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .signin:hover {
+            background: white;
+            border: 1px solid #000;
+            color: #000;
+        }
+
+        .group .signup {
+            background-color: white;
+            border-radius: 8px;
+            color: black;
+        }
+
+        .signup:hover {
+            background: black;
+            border: 1px solid #000;
+            color: #fff;
+        }
+
+        .main {
+            width: 100%;
+            height: 200vh;
+            background-color: chocolate;
+        }
+        .group i{
+            padding: 4px;
+            margin-right: 20px;
+            cursor: pointer;
+            display: none;
+        }
+        .modal{
+            position: fixed;
+            display: flex;
+            background-color: fff;
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+        .modal ul{
+            flex-direction: column;
+        }
+        .icon-close{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+        }
+        .modal ul li{
+            list-style-type: none;
+            padding: 10px;
+            height: 40px;
+        }
+        @media only screen and (max-width: 1024px){
+            .group i{
+                display: block;
+            }
+            .header{
+                justify-content: flex-end;
+            }
+            .ui{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <ul class="ui">
+                <li>Platform</li>
+                <li>Solutions</li>
+                <li>Pricing</li>
+                <li>Resource</li>
+                <li>Company</li>
+                <li>Contactus</li>
+            </ul>
+            <div class="group">
+                <button class="signin">
+                    Sign In
+                </button>
+                <button class="signup" style="margin-right: 20px;">
+                    Sign Up
+                </button>
+                <i class="fa-solid fa-bars" onclick="openModal()"></i>
+            </div>
+        </div>
+        <div class="modal">
+            <i class="fa-solid fa-x icon-close" onclick="closeModal()"></i>
+            <ul>
+                <li>Platform</li>
+                <li>Solutions</li>
+                <li>Pricing</li>
+                <li>Resource</li>
+                <li>Company</li>
+                <li>Contactus</li>
+            </ul>
+        </div>
+        <div class="main">
+
+        </div>
+    </div>
+</body>
+    <script>
+        const modal = document.querySelector(".modal");
+        function openModal(){
+            modal.style.display = 'flex';
+        }
+        function closeModal(){
+            modal.style.display = 'none';
+        }
+    </script>
+    
+
+</html>
