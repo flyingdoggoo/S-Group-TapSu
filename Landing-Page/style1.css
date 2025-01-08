@@ -6,19 +6,23 @@
     font-family: Spiegel;
     src: url(./assets/SpiegelSans-2ExtraLight_TRIAL.woff2);
 }
+@font-face {
+    font-family: "Beaufort for LOL";
+    src: url(./assets/BeaufortforLOL-Heavy.ttf);
+}
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* height: 2000px; */
     font-family: myFirstFont,Tahoma,sans-serif;
 }
 .container {
     width: 100%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     box-sizing: border-box;
 }
 .header{
+    /* overflow-y: auto; */
     position: sticky;
     top: 0;
     left: 0;
@@ -29,7 +33,7 @@
     box-sizing: border-box;
     height: 80px;
     letter-spacing: 1.04px;
-    
+    z-index: 30000;
 }
 .header .ui{
     box-sizing: border-box;
@@ -37,7 +41,7 @@
     flex-direction: row;
     align-items: center;
     text-align: center;
-    gap: 30px;
+    gap: 10px;
     height: 100%;
     width: 100%;
     color: #f9f9f9;
@@ -49,23 +53,32 @@
     padding: 7.5px 16px;
     text-align: center;
 }
-.ui .content{
+.ui .content, .content.responsive{
     height: 66px;
     margin: 7px 0;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.ui .content:hover{
-    border-bottom: 5px rgb(11, 196, 226) solid;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+.ui .content.responsive{
+    display: none;
+}
+.ui .content:hover .bottom-line{
+    border-bottom: 4px rgb(0, 160, 186) solid;
+    border-radius: 2px;
+}
+.bottom-line{
+    position: absolute;
+    bottom: 2px;
+    height: 4px;
+    width: 100%;
 }
 .ui .content:hover p{
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.274);
     color: goldenrod;
-    border-radius: 15px;
+    border-radius: 4px;
 }
 .header-right .header-button:hover{
     color: goldenrod;
@@ -78,10 +91,37 @@
 .arrow{
     margin-right: 3px;
     margin-bottom: 4px;
+    margin-left: 4px;
+    display: inline-block;
     width: 7px;
 }
+.arrow-down-sub{
+    width: 10px; 
+    height: 5px; 
+    fill: #7E7E7E;
+}
+.arrow-down {
+    display: flex;
+    align-items: center; 
+    margin-left: 5px; 
+}
 .nav{
-    width: 100px;
+    display: flex;
+    align-items: center;
+}
+.content{
+    display: flex;
+    align-items: center;
+}
+.content p{
+    display: flex;
+    align-items: center;
+}   
+.nav svg {
+    width: 12px; 
+    height: 12px;
+    display: inline-block;
+    margin-left: 2px;  
 }
 .logo .riot-pic{
     fill: #f9f9f9;
@@ -141,12 +181,14 @@
     max-width: 100%;
 }
 .video{
-    position: absolute;
+    /* position: absolute; */
+    position: relative;
+    /* position: relative; */
+    z-index: 1;
     box-sizing: border-box;
     height: 640px; 
     width: 100%;
     max-width: 100%;
-    z-index: 1;
 }
 .video video {
     position: absolute;
@@ -178,4 +220,625 @@
     font-family: Spiegel, sans-serif;
     font-weight: 200px;
     font-size: 18px;
+}
+
+.tintuc-list{
+    position: absolute;
+    left: 0;
+    top: 60px;
+    background-color: #292929;
+    border-radius: 0 0 2px 2px;
+    text-align: left;
+    font-size: 13px;
+    min-width: 200px;
+    display: none;
+}
+.tintuc-list li{
+    list-style: none;
+    margin: 5px 16px;
+}
+.tintuc-list li a{
+    display: inline-block;
+    padding: 8px 16px;
+    border: none;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #c7c7c7;
+    text-decoration: none;
+}
+.tintuc:hover .tintuc-list, .responsive:hover .tintuc-list{
+    display: block;
+}
+.tintuc-list li a:hover{
+    background-color: rgba(128, 128, 128, 0.322);
+    border-radius: 4px;
+    color: #fff;
+}
+.content.responsive .tintuc-list li{
+    display: none;
+}
+.tintuctieubieu{
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0px auto;
+}
+.tintuctieubieu .header-2 h2{
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 32px;
+    line-height: 40px;
+}
+.cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.cover-all{
+    margin: 0px auto;
+    padding: 40px 40px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.cover img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% center;
+    position: absolute;
+    z-index: -1;
+}
+.header-2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.videos{
+    /* position: absolute; */
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+.videos .cards{
+    width: calc(100% / 3);
+}
+.videos div img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.cross{
+    height: 13px;
+    width: 1px;
+    background-color: rgb(204, 204, 204);
+    margin: 0px 8px;
+    display: inline-block;
+}
+.cards span{
+    font-weight: bold;
+    color: rgb(200, 170, 110);
+    text-transform: uppercase;
+}
+.time-stamp{
+    display: inline-block;
+}
+.cards-text-1{
+    font-family: Spiegel, sans-serif;
+    word-break: break-word;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.cards-text-2{
+    font-family: Spiegel, sans-serif;
+    font-weight: 400;
+    word-break: break-word;
+    font-size: 16px;
+    line-height: 24px;
+}
+.champions .cover-champions{
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    height: 850px;
+    margin: 0px auto;
+}
+.background-champions{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.background-champions img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-position: center center;
+    object-fit: cover;
+}
+.pick-champions{
+    /* position: relative; */
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.pick-champions-text-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    width: 50%;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+.champions-img{
+    /* width: 50%; */
+    /* height: 100%; */
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.akali{
+    display: flex;
+    justify-content: center;
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(10, 20, 40);
+}
+.akali-des{
+    font-family: Spiegel, sans-serif;
+    word-break: break-word;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: rgb(108, 114, 126);
+    margin-top: 20px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+}
+.pick-champions-text-icon h2{
+    text-wrap: balance;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 64px;
+    line-height: 72px;
+    color: rgb(10, 20, 40);
+    word-break: normal;
+    margin: 20px 0;
+}
+.pick-champions-text-icon p{
+    font-family: Spiegel, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(10, 20, 40);
+    margin-top: 16px;
+}
+.pick-champions-a{
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.pick-champions a{
+    text-decoration: none;
+    width: fit-content;
+    padding: 19px 32px;
+    color: black;
+}
+.text-in-a-1{
+    background-color: #c8aa6e
+}
+.text-in-a-2{
+    background-color: #59c1de;
+}
+.text-in-a-1 div, .text-in-a-2 div{
+    font-family: Spiegel, sans-serif;
+    font-weight: 200px;
+    font-size: 18px;
+}
+.group{
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.group div{
+    display: flex;
+    flex-direction: column;
+}
+
+.cover-all-2{
+    min-height: 640px;
+    height: 800px;
+    width: 100%;
+    position: relative;
+}
+.background-2{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.background-2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.champions-img-2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.champions-img-text-2{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    gap: 50px;
+    padding: 20px 20px;
+}
+.champions-text-2{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 20px;
+    max-width: 50%;
+}
+.champions-text-21{
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff;
+}
+.champions-text-22{
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 80px;
+    line-height: 88px;
+    color: #fff;
+}
+.champions-text-23{
+    font-family: Spiegel, sans-serif;
+    font-weight: 400;
+    word-break: break-word;
+    font-size: 18px;
+    line-height: 26px;
+    color: rgb(255, 255, 255);
+}
+.champions-img-text-2 a{
+    display: block;
+    width: fit-content;
+    padding: 19px 32px;
+    color: #0a1428;
+    background-color: #c8aa6e;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.champions-text-2-content{
+    font-size: 18px;
+    font-family: Spiegel, sans-serif;
+    font-weight: 100;
+}
+.cover-all-3{
+    min-height: 640px;
+    height: 900px;
+    width: 100%;
+    position: relative;
+}
+.background-3{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.background-3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.play-mode{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 40px;
+    padding: 20px 40px;
+
+}
+.play-mode-text-pic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 50px;
+}
+.play-mode-text{
+    z-index: 1;
+}
+.play-mode-text .text1{
+    font-family: Spiegel, sans-serif;
+    word-break: break-word;
+    font-size: 22px;
+    line-height: 32px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+.play-mode-text .text2{
+    text-wrap: balance;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 64px;
+    line-height: 72px;
+    color: rgb(255, 255, 255);
+    word-break: normal;
+}
+.play-mode-text a{
+    display: block;
+    width: fit-content;
+    padding: 19px 32px;
+    background-color: #c8aa6e;
+    text-decoration: none;
+    margin-top: 80px;
+}
+.play-mode-text a div{
+    font-size: 18px;
+    font-family: Spiegel, sans-serif;
+    font-weight: 100;
+    color: #0a1428;
+}
+.play-mode-pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    gap: 20px;
+}
+.play-mode-pic div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; 
+    gap: 30px;
+    color: #fff;
+    font-family: Spiegel, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    word-break: normal;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+.circle-video{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    gap: 40px;
+}
+.circle-video video{
+    z-index: 1;
+    clip-path: circle(50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.circle-video-border{
+    padding: 25px;
+    border-radius: 50%;
+    border: 1px solid rgb(200, 170, 110);
+}
+.circle-video-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+.circle-video-text .text1{
+    text-wrap: balance;
+    word-break: break-word;
+    font-family: "Beaufort for LOL", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(255, 255, 255);
+}
+.circle-video-text .text2{
+    font-family: Spiegel, sans-serif;
+    font-weight: 400;
+    word-break: break-word;
+    font-size: 18px;
+    line-height: 26px;
+    color: rgb(255, 255, 255);
+}
+.cover-all-4{
+    min-height: 640px;
+    height: 640px;
+    width: 100%;
+    position: relative;
+}
+.cover-all-4 .background-4{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.cover-all-4 .background-4 video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cover-all-4 .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: fit-content;
+    padding: 19px 32px;
+    background-color: #c8aa6e;
+}
+.cover-all-4 .content a{
+    text-decoration: none;
+}
+.cover-all-4 .content a div{
+    font-size: 18px;
+    font-family: Spiegel, sans-serif;
+    font-weight: 100;
+    color: #0a1428;
+}
+.footer-des{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #292929;
+    padding: 24px;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+    /* gap: 30px; */
+    font-size: 13px;
+    letter-spacing: .08em;
+}
+.footer-des div{
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+.footer-des div:hover{
+    background-color: rgba(128, 128, 128, 0.326);
+}
+.footer-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 0;
+    box-sizing: border-box;
+    background-color: #111;
+    gap: 20px;
+}
+.footer-icon div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 6px;
+    background-color: rgba(128, 128, 128, 0.296);
+    border-radius: 10px;
+}
+.footer-icon div i{
+    color: #fff;
+    font-size: 15px;
+}
+.footer-logo{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding: 24px 0px 20px;
+    box-sizing: border-box;
+    background-color: #111;
+    gap: 20px;
+}
+.footer-logo a svg{
+    fill: rgb(115, 115, 115)
+}
+.footer-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #111;
+    gap: 20px;
+}
+.text1{
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 140%;
+    text-align: center;
+    word-break: keep-all;
+    color: #7e7e7e;
+}
+.text2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.text2 a{
+    display: block;
+    padding: 4px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.text2 a div{
+    color: #f9f9f9;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .08em;
+}
+.text2 a:hover{
+    background-color: rgba(128, 128, 128, 0.326);
+}
+.warn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 12px 12px;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.185);
 }

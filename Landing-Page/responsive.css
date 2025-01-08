@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1340px){
+    .content.responsive{
+        display: flex !important;
+    }
+    .content.hotro{
+        display: none;
+    }
+    .content.responsive .tintuc-list .hotro-block{
+        display: block !important;
+    }
+}
+@media only screen and (max-width: 1234px){
+    .content.vutru{
+        display: none;
+    }
+    .content.responsive .tintuc-list .vutru-block{
+        display: block !important;
+    }
+}
+@media only screen and (max-width: 1120px){
+    .content.esports{
+        display: none;
+    }
+    .content.responsive .tintuc-list .esports-block{
+        display: block !important;
+    }
+}
