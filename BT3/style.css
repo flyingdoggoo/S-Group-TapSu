@@ -28,11 +28,10 @@ input {
     display: flex;
     justify-content: center;
 }
-#container2 div {
+#container2 .card {
     background-color: white;
     padding: 10px;
     margin: 9px;
-    /* width: calc(80% / 6); */
     height: 350px;
     width: 200px;
     font-size: 20px;
@@ -42,22 +41,45 @@ input {
     justify-content: center;
 }
 #container2 .card img{
-    /* margin-right: 30px; */
     width: 100%;
-    margin-top: 20px;
-    /* padding: 30px 30px; */
-    /* margin: 30px 30px auto; */
 }
-#container2 div p{
+#container2 .card p{
     display: inline-block;
     border-radius: 10px;
     padding: 8px 7px;
     font-size: 15px;
     margin: 0;
 }
-#container2 div h3{
-    margin-top: 40px;
-    margin-bottom: 5px;
+#container2 .card h3{
+    /* margin-top: 40px; */
+    margin: 0 5px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: rgb(41, 36, 36);
+}
+.card .element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.card .description {
+    width: 180.8px;
+    height: 180.8px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: solid 1px #5c565665;
+    pointer-events: auto;
 }
 .Grass{
     background-color: rgb(33, 218, 33);
