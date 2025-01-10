@@ -25,3 +25,11 @@
         display: block !important;
     }
 }
+@media only screen and (max-width: 1024px){
+    .content.tintuc{
+        display: none;
+    }
+    .content.responsive .tintuc-list .tintuc-block{
+        display: block !important;
+    }
+}

@@ -22,7 +22,7 @@
     box-sizing: border-box;
 }
 .header{
-    /* overflow-y: auto; */
+    overflow-y: auto;
     position: sticky;
     top: 0;
     left: 0;
