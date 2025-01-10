@@ -46,37 +46,10 @@ function render(){
         card.appendChild(description)
         card.appendChild(element)
         container2.appendChild(card);
-        
-        card.addEventListener('click', () => pokeDes(i));
+
+        card.addEventListener('mouseenter', () => pokeDes(i));
     }   
 }
-// function pokeDes(index){
-//     const card = cards[index]
-//     const img = card.querySelector('img')
-//     const description = card.querySelector('.description')
-//     let check = description.querySelector('.text')
-//     if(check){
-//         check.textContent = paragraph[index]
-//     }
-//     else
-//     {
-//         const p = document.createElement('p')
-//         p.classList.add('text')
-//         p.textContent = paragraph[index]
-//         description.appendChild(p)
-//     }
-
-//     if(description.style.display === 'none'){
-//         description.style.display = 'flex'
-//         img.style.display = 'none'
-//     }
-
-//     else
-//     {
-//         description.style.display = 'none'
-//         img.style.display = 'block'
-//     }
-// }
 function pokeDes(index) {
     const container2 = document.querySelector('#container2');
     const cards = container2.querySelectorAll('.card');
@@ -97,7 +70,7 @@ function pokeDes(index) {
         description.appendChild(p);
     }
 
-    if (description.style.display === 'none') {
+    if (description.style.display === 'none' || description.style.display === '') {
         description.style.display = 'flex';
         img.style.display = 'none';
     } else {
