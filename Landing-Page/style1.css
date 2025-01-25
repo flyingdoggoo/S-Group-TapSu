@@ -10,6 +10,10 @@
     font-family: "Beaufort for LOL";
     src: url(./assets/BeaufortforLOL-Heavy.ttf);
 }
+@font-face {
+    font-family: "Mark Pro";
+    src: url(./assets/Mark-Pro.ttf);
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -18,11 +22,11 @@
 }
 .container {
     width: 100%;
-    /* overflow-y: auto; */
+    height: auto;
     box-sizing: border-box;
 }
-.header{
-    overflow-y: auto;
+
+.header {
     position: sticky;
     top: 0;
     left: 0;
@@ -61,6 +65,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: all 0.3s ease;
+}
+.ui .content p, .ui .content{
+    transition: all 0.3s ease;
 }
 .ui .content.responsive{
     display: none;
@@ -83,6 +91,9 @@
 .header-right .header-button:hover{
     color: goldenrod;
 }
+.logo-league-2{
+    display: none;
+}
 .logo{
     display: flex;
     align-items: center;
@@ -99,6 +110,18 @@
     width: 10px; 
     height: 5px; 
     fill: #7E7E7E;
+}
+.content.tintuc:hover .arrow-down-sub path{
+    fill: #fff;
+}
+.content.esports:hover .navv path{
+    fill: #fff;
+}
+.content.vutru:hover svg path{
+    fill: #fff;
+}
+.content.hotro:hover svg path{
+    fill: #fff;
 }
 .arrow-down {
     display: flex;
@@ -141,10 +164,10 @@
     font-size: 13px;
     line-height: 16px;
     text-overflow: ellipsis;
-    background-color: rgb(11, 196, 226);
+    background: linear-gradient(315deg, rgb(11, 196, 226) 0%, rgb(44, 140, 194) 100%);
     z-index: 0;
-    border-radius: 12px;
-    padding: 10px 16px;
+    border-radius: 14px;
+    padding: 16px 14px;
     margin-right: 20px;
     width: 120px;
     height: 32px;
@@ -163,6 +186,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.menu-icon{
+    display: block;
+    height: 48px;
+    width: 48px;
+    display: none;
+    margin-left: 15px;
+    cursor: pointer;
 }
 .header-icon-1{
     background-color: rgba(128, 128, 128, 0.323);
@@ -220,8 +251,11 @@
     font-family: Spiegel, sans-serif;
     font-weight: 200px;
     font-size: 18px;
+    transition: all 0.3s ease;
 }
-
+.Text-Play span div:hover{
+    background-color: #cab68d;
+}
 .tintuc-list{
     position: absolute;
     left: 0;
@@ -235,7 +269,7 @@
 }
 .tintuc-list li{
     list-style: none;
-    margin: 5px 16px;
+    margin: 10px 16px;
 }
 .tintuc-list li a{
     display: inline-block;
@@ -249,6 +283,7 @@
     line-height: 16px;
     color: #c7c7c7;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 .tintuc:hover .tintuc-list, .responsive:hover .tintuc-list{
     display: block;
@@ -293,8 +328,6 @@
 .cover img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    object-position: 50% center;
     position: absolute;
     z-index: -1;
 }
@@ -304,20 +337,54 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.videos{
-    /* position: absolute; */
-    display: flex;
-    gap: 40px;
-    margin-top: 40px;
-}
-.videos .cards{
-    width: calc(100% / 3);
-}
-.videos div img{
-    width: 100%;
+.container.swiper{
     height: auto;
-    object-fit: cover;
+    width: 100%;
 }
+.container1.swiper{
+    height: auto;
+    width: 100%;
+}
+.card-wrapper.swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding: 10px;
+}
+
+.cards.swiper-slide{
+    padding: 15px;
+    text-align: center;
+    z-index: 1;
+}
+
+.cards.swiper-slide img {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cards img:hover {
+    transform: scale(1.05); 
+}
+
+.cards .time-stamp {
+    font-size: 12px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.cards-text-1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.cards-text-2 {
+    font-size: 14px;
+    color: #555;
+}
+
 .cross{
     height: 13px;
     width: 1px;
@@ -348,54 +415,35 @@
     font-size: 16px;
     line-height: 24px;
 }
-.champions .cover-champions{
-    position: relative;
-    max-width: 1920px;
-    width: 100%;
-    height: 850px;
-    margin: 0px auto;
-}
-.background-champions{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.background-champions img{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    object-position: center center;
-    object-fit: cover;
-}
 .pick-champions{
-    /* position: relative; */
     display: flex;
     width: 100%;
-    max-width: 100%;
-    justify-content: space-around;
+    justify-content: space-between; 
     align-items: center;
+    padding: 40px 40px;
 }
 .pick-champions-text-icon{
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     z-index: 1;
-    width: 50%;
     margin-top: 50px;
-    padding: 0 20px;
 }
 .champions-img{
-    /* width: 50%; */
-    /* height: 100%; */
-    object-fit: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 100px;
 }
-.akali{
+.champions-img div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.champions-img-text .text1{
     display: flex;
     justify-content: center;
     text-wrap: balance;
@@ -408,7 +456,7 @@
     line-height: 32px;
     color: rgb(10, 20, 40);
 }
-.akali-des{
+.champions-img-text .text2{
     font-family: Spiegel, sans-serif;
     word-break: break-word;
     font-size: 16px;
@@ -447,41 +495,86 @@
     margin-bottom: 20px;
     justify-content: center;
 }
-.pick-champions a{
+.pick-champions-a a{
     text-decoration: none;
     width: fit-content;
     padding: 19px 32px;
     color: black;
 }
 .text-in-a-1{
-    background-color: #c8aa6e
+    background-color: #c8aa6e;
+    transition: all 0.3s ease;
 }
 .text-in-a-2{
     background-color: #59c1de;
+    transition: all 0.3s ease;
+}
+.text-in-a-1:hover{
+    background-color: #ceb582
+}
+.text-in-a-2:hover{
+    background-color: #95d1e1;
 }
 .text-in-a-1 div, .text-in-a-2 div{
     font-family: Spiegel, sans-serif;
     font-weight: 200px;
     font-size: 18px;
 }
-.group{
+.group.swiper-wrapper{
     margin-top: 20px;
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding: 10px;
 }
-.group div{
-    display: flex;
-    flex-direction: column;
+.group .swiper-slide{
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-
+.group .swiper-slide:hover{
+    transform: scale(1.1);
+}   
+.group .swiper-slide div{
+    font-family: Spiegel, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    word-break: normal;
+    font-weight: 600;
+    color: rgb(10, 20, 40);
+    margin-top: 20px;
+}
+.role{
+    width: 64px;
+    height: 64px;
+}
+.cover-champions{
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    height: auto;
+}
+.background-champions{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.background-champions img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-position: center center;
+    object-fit: cover;
+}
 .cover-all-2{
     min-height: 640px;
+    /* max-height: fit-content; */
     height: 800px;
+    /* height: fit-content; */
     width: 100%;
     position: relative;
+    display: flex;
 }
 .background-2{
     height: 100%;
@@ -555,6 +648,10 @@
     background-color: #c8aa6e;
     text-decoration: none;
     margin-top: 20px;
+    transition: all 0.3s ease;
+}
+.champions-img-text-2 a:hover{
+    background-color: #dcc494;
 }
 .champions-text-2-content{
     font-size: 18px;
@@ -563,7 +660,7 @@
 }
 .cover-all-3{
     min-height: 640px;
-    height: 900px;
+    height: auto;
     width: 100%;
     position: relative;
 }
@@ -625,6 +722,10 @@
     background-color: #c8aa6e;
     text-decoration: none;
     margin-top: 80px;
+    transition: all 0.3s ease;
+}
+.play-mode-text a:hover{
+    background-color: #cab68d;
 }
 .play-mode-text a div{
     font-size: 18px;
@@ -633,11 +734,12 @@
     color: #0a1428;
 }
 .play-mode-pic{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
-    gap: 20px;
+    gap: 40px;
 }
 .play-mode-pic div{
     display: flex;
@@ -652,6 +754,12 @@
     word-break: normal;
     font-weight: 600;
     color: rgb(255, 255, 255);
+    color: gray;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.play-mode-pic div:hover{
+    scale: 1.1;
 }
 .circle-video{
     width: 90%;
@@ -701,6 +809,7 @@
     font-size: 18px;
     line-height: 26px;
     color: rgb(255, 255, 255);
+    padding-bottom: 20px;
 }
 .cover-all-4{
     min-height: 640px;
@@ -727,6 +836,10 @@
     width: fit-content;
     padding: 19px 32px;
     background-color: #c8aa6e;
+    transition: all 0.3s ease;
+}
+.cover-all-4 .content:hover{
+    background-color: #cab68d;
 }
 .cover-all-4 .content a{
     text-decoration: none;
@@ -755,6 +868,7 @@
 .footer-des div{
     padding: 5px 15px;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 .footer-des div:hover{
     background-color: rgba(128, 128, 128, 0.326);
@@ -778,6 +892,7 @@
     padding-bottom: 6px;
     background-color: rgba(128, 128, 128, 0.296);
     border-radius: 10px;
+    transition: all 0.3s ease;
 }
 .footer-icon div i{
     color: #fff;
@@ -823,6 +938,7 @@
     padding: 4px 10px;
     border-radius: 5px;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 .text2 a div{
     color: #f9f9f9;
@@ -842,3 +958,13 @@
     border-radius: 5px;
     background-color: rgba(128, 128, 128, 0.185);
 }
+
+.swiper-button-prev, .swiper-button-next{
+    color: rgb(200, 170, 110) !important;
+    width: 10px !important;
+}
+
+.swiper-scrollbar {
+    height: 1px !important;
+}
+
