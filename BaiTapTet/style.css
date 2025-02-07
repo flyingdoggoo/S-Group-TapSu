@@ -1,0 +1,119 @@
+body{
+    /* width: 90%; */
+    margin: 0 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(46, 44, 107);
+}
+#header{
+    font-size: 50px;
+    margin: 40px 0;
+    text-align: center;
+}
+#container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0;
+    gap: 20px;
+}
+input, button{
+    padding: 25px;
+    width: 40%;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    margin-top: 40px;
+    font-size: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+button{
+    width: 10%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#container2{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+#container2 .card {
+    background-color: white;
+    padding: 10px;
+    margin: 9px;
+    height: 350px;
+    width: 200px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+#container2 .card:nth-child(n+5) {
+    display: none;
+}
+#container2 .card img{
+    width: 100%;
+}
+#container2 .card p{
+    display: inline-block;
+    border-radius: 10px;
+    padding: 8px 7px;
+    font-size: 15px;
+    margin: 0;
+}
+#container2 .card h3{
+    /* margin-top: 40px; */
+    margin: 0 5px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    text-decoration: none;
+    color: rgb(41, 36, 36);
+}
+.card .element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.card .description {
+    width: 180.8px;
+    height: 180.8px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: solid 1px #5c565665;
+    pointer-events: auto;
+}
+.grass{
+    background-color: rgb(33, 218, 33);
+}
+.poison{
+    background-color: rgb(168, 10, 168);
+}
+.fire{
+    background-color: rgb(246, 66, 66);
+}
+.flying{
+    background-color: rgba(146, 13, 169, 0.679);
+}
+.water{
+    background-color: rgba(7, 7, 235, 0.525);
+}
+.bug{
+    background-color: rgba(14, 228, 82, 0.616);
+}
+.normal{
+    background-color: rgba(145, 145, 145, 0.616);
+}
