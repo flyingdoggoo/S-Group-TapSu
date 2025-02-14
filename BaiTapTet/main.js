@@ -61,6 +61,7 @@
             card.href = '#'
             img.src = IMG
             span.textContent = "#" + (i + 1)
+            NAME = NAME[0].toUpperCase() + NAME.substr(1, NAME.length);
             h3.textContent = NAME
             p1.textContent = types[0]
             p2.textContent = types[1]
