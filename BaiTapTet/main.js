@@ -19,6 +19,7 @@
 
 
     const raw = await fetch('https://pokeapi.co/api/v2/pokemon')
+    // const raw = await fetch("https://pokeapi.co/api/v2/pokemon/charizard")
     const data = await raw.json()
 
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -67,7 +68,6 @@
             p2.textContent = types[1]
             p1.style.fontWeight = 'bold';
             p2.style.fontWeight = 'bold';
-            card.setAttribute('data-name', NAME.toLowerCase());
 
             element.appendChild(p1)
             element.appendChild(p2)
@@ -78,21 +78,15 @@
             container2.appendChild(card);
         }
     }
-    RenderFilteredData(pokes)
+
+    RenderFilteredData(pokes) // Lần đầu render
+    
     const search = document.querySelector('#search')
     search.addEventListener('input', () => {
         const searchTerm = search.value.toLowerCase();
-        document.querySelectorAll('.card').forEach(card => {
-            const name = card.getAttribute('data-name');
-            if (name.includes(searchTerm)) {
-                card.style.display = 'flex';
-            }
-            else if(searchTerm == '') {
-                RenderFilteredData(pokes)
-            }
-            else {
-                card.style.display = 'none';
-            }
-        });
+        const filteredList = pokes.filter(item => {
+            return item.name.toLowerCase().includes(searchTerm)
+        })
+        RenderFilteredData(filteredList);
     });
 })()
