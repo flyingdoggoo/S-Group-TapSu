@@ -26,6 +26,9 @@ async function fetchPokemonDetail() {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
         const data = await response.json()
+        const speciesResponse = await fetch(data.species.url)
+        const speciesData = await speciesResponse.json()
+        const flavorTextEntry = speciesData.flavor_text_entries.find(entry => entry.language.name === 'en')
         pokemonDetail.value = {
             id: data.id,
             name: data.name.charAt(0).toUpperCase() + data.name.slice(1),
@@ -37,7 +40,8 @@ async function fetchPokemonDetail() {
             stats: data.stats.map(stat => ({
                 name: stat.stat.name,
                 base_stat: stat.base_stat
-            }))
+            })),
+            describe: flavorTextEntry ? flavorTextEntry.flavor_text : 'No description available.'
         }
         fetchEvolutionChain(data.species.url)
         console.log(pokemonDetail.value.types)
@@ -99,8 +103,8 @@ onMounted(async () => {
                 <div class="element">
                     <p v-for="type in pokemonDetail.types" :key="type" :class="type">{{ type }}</p>
                 </div>
-                <h2 class="header">Ivysaur</h2>
-                <p class="describe">When the bulb on its back grows large, it appearsto lose the ability to stand on its hind legs.</p>
+                <h2 class="header">{{ pokemonDetail.name }}</h2>
+                <p class="describe">{{ pokemonDetail.describe }}</p>
                 <div class="heightWeight">
                     <div class="height">
                         <h3>Height</h3>
